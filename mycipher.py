@@ -25,3 +25,18 @@ def main():
     # Read the message from stdin
     message = input().upper()
 
+    # Encode the message using Caesar cipher
+    encoded_message = caesar_cipher(message, shift)
+
+    # Print the final encoded message in 10 blocks of five letters per line
+    bsize = 5
+    bper_line = 10
+    for i in range(0, len(encoded_message), bsize * bper_line):
+        line = encoded_message[i:i + bsize * bper_line]
+        for j in range(0, len(line), bsize):
+            print(line[j:j + bsize], end=" ")
+        print()
+
+if __name__ == "__main__":
+    main()
+
