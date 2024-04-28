@@ -10,3 +10,8 @@ def caesar_cipher(text, shift):
                 encrypted_char = chr((ord(char) - 97 + shift) % 26 + 97)
             encrypted_text += encrypted_char
     return encrypted_text
+def main():
+    # gets the amount to shift as command-line argument
+    if len(sys.argv) != 2:
+        print("Usage: python caesar_cipher.py 'shift'")
+        sys.exit(1)
