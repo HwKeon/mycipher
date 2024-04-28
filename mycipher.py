@@ -15,3 +15,13 @@ def main():
     if len(sys.argv) != 2:
         print("Usage: python caesar_cipher.py 'shift'")
         sys.exit(1)
+
+    try:
+        shift = int(sys.argv[1]) % 26
+    except ValueError:
+        print("Shift must be an integer")
+        sys.exit(1)
+
+    # Read the message from stdin
+    message = input().upper()
+
